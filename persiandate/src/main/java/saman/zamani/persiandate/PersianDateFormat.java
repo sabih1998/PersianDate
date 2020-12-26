@@ -46,20 +46,20 @@ public class PersianDateFormat {
     String[] key = {"a", "l", "j", "F", "Y", "H", "i", "s", "d", "g", "n", "m", "t", "w", "y", "z",
         "A", "L","X","C","E"};
     String year2;
-    if (("" + date.getShYear()).length() == 2) {
-      year2 = "" + date.getShYear();
-    } else if (("" + date.getShYear()).length() == 3) {
-      year2 = ("" + date.getShYear()).substring(2, 3);
+    if (("" + date.getYear()).length() == 2) {
+      year2 = "" + date.getYear();
+    } else if (("" + date.getYear()).length() == 3) {
+      year2 = ("" + date.getYear()).substring(2, 3);
     } else {
-      year2 = ("" + date.getShYear()).substring(2, 4);
+      year2 = ("" + date.getYear()).substring(2, 4);
     }
-    String[] values = {date.getShortTimeOfTheDay(), date.dayName(), "" + date.getShDay(),
+    String[] values = {date.getShortTimeOfTheDay(), date.dayName(), "" + date.getDay(),
         date.monthName(),
-        "" + date.getShYear(),
+        "" + date.getYear(),
         textNumberFilterStatic("" + date.getHour()), textNumberFilterStatic("" + date.getMinute()),
         textNumberFilterStatic("" + date.getSecond()),
-        textNumberFilterStatic("" + date.getShDay()), "" + date.getHour(), "" + date.getShMonth(),
-        textNumberFilterStatic("" + date.getShMonth()),
+        textNumberFilterStatic("" + date.getDay()), "" + date.getHour(), "" + date.getMonth(),
+        textNumberFilterStatic("" + date.getMonth()),
         "" + date.getMonthDays(), "" + date.dayOfWeek(), year2, "" + date.getDayInYear(),
         date.getTimeOfTheDay(),
         (date.isLeap() ? "1" : "0"),
@@ -75,20 +75,20 @@ public class PersianDateFormat {
 
   public String format(PersianDate date) {
     String year2 = null;
-    if (("" + date.getShYear()).length() == 2) {
-      year2 = "" + date.getShYear();
-    } else if (("" + date.getShYear()).length() == 3) {
-      year2 = ("" + date.getShYear()).substring(2, 3);
+    if (("" + date.getYear()).length() == 2) {
+      year2 = "" + date.getYear();
+    } else if (("" + date.getYear()).length() == 3) {
+      year2 = ("" + date.getYear()).substring(2, 3);
     } else {
-      year2 = ("" + date.getShYear()).substring(2, 4);
+      year2 = ("" + date.getYear()).substring(2, 4);
     }
-    String[] values = {date.isMidNight() ? "ق.ظ" : "ب.ظ", date.dayName(), "" + date.getShDay(),
+    String[] values = {date.isMidNight() ? "ق.ظ" : "ب.ظ", date.dayName(), "" + date.getDay(),
         date.monthName(),
-        "" + date.getShYear(),
+        "" + date.getYear(),
         this.textNumberFilter("" + date.getHour()), this.textNumberFilter("" + date.getMinute()),
         this.textNumberFilter("" + date.getSecond()),
-        this.textNumberFilter("" + date.getShDay()), "" + date.getHour(), "" + date.getShMonth(),
-        this.textNumberFilter("" + date.getShMonth()),
+        this.textNumberFilter("" + date.getDay()), "" + date.getHour(), "" + date.getMonth(),
+        this.textNumberFilter("" + date.getMonth()),
         "" + date.getMonthDays(), "" + date.dayOfWeek(), year2, "" + date.getDayInYear(),
         date.getTimeOfTheDay(),
         (date.isLeap() ? "1" : "0"),
@@ -135,8 +135,7 @@ public class PersianDateFormat {
         }
       }
     }
-    return new PersianDate()
-        .initJalaliDate(JalaliDate.get(0), JalaliDate.get(1), JalaliDate.get(2), JalaliDate.get(3),
+    return new PersianDate(JalaliDate.get(0), JalaliDate.get(1), JalaliDate.get(2), JalaliDate.get(3),
             JalaliDate.get(4), JalaliDate.get(5));
   }
 

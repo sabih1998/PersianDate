@@ -123,11 +123,11 @@ public class AgeCalculator extends AppCompatActivity
 		}
 		PersianDate date;
 		if(rdTojalali.isChecked()){
-			date = new PersianDate().initJalaliDate(year,month,day);
+			date = new PersianDate(year,month,day);
 			long[] age = date.untilToday();
 			textViews.get(0).setText("" + age[0] + " روز " + age[1] + " ساعت " + age[2] + " دقیقه " + age[3] + " ثانیه");
 		}else{
-			date = new PersianDate().initGrgDate(year,month,day);
+			date = new PersianDate().initDateByGrg(year,month,day);;
 			long[] age = date.untilToday();
 			textViews.get(0).setText("" + age[0] + " روز " + age[1] + " ساعت " + age[2] + " دقیقه " + age[3] + " ثانیه");
 		}

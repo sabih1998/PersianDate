@@ -125,11 +125,11 @@ public class DateConverter extends AppCompatActivity
 		}
 		PersianDate date;
 		if(rdTojalali.isChecked()){
-			date = new PersianDate().initJalaliDate(year,month,day);
+			date = new PersianDate(year,month,day);
 			Date grgDate = date.toDate();
 			textViews.get(10).setText(new SimpleDateFormat("EEEE dd MMMM yyyy").format(grgDate));
 		}else{
-			date = new PersianDate().initGrgDate(year,month,day);
+			date = new PersianDate().initDateByGrg(year,month,day);
 			textViews.get(10).setText(formater.format(date));
 		}
 	}
