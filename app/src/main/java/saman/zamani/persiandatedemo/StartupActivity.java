@@ -141,37 +141,6 @@ public class StartupActivity extends AppCompatActivity {
             }
         });
 
-
-
-        String text = "";
-//        Log.i("Test_start", String.valueOf(System.currentTimeMillis()));
-//        PersianDate persianDate = new PersianDate(1577167344123L);
-//        while (!(persianDate.getYear() == 1501 && persianDate.getMonth() == 1 && persianDate.getDay() == 1)) {
-//            text = text.concat(PersianDateFormat.format(persianDate , "Ymd") + "\n");
-//            persianDate = persianDate.addDay(1);
-//        }
-//        Log.i("Test_end", String.valueOf(System.currentTimeMillis()));
-
-
-//        FileOutputStream fos = null;
-//        try {
-//            fos = openFileOutput("test.csv", MODE_PRIVATE);
-//            fos.write(text.getBytes());
-//            Toast.makeText(this, "Saved to " + getFilesDir() + " / test.csv",
-//                    Toast.LENGTH_LONG).show();
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if (fos != null) {
-//                try {
-//                    fos.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
     }
 
     @MainThread
